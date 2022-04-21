@@ -1,0 +1,696 @@
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~$ sudo apt install putty-tools
+[sudo] password for lenovo: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  putty-doc
+The following NEW packages will be installed:
+  putty-tools
+0 upgraded, 1 newly installed, 0 to remove and 160 not upgraded.
+Need to get 425 kB of archives.
+After this operation, 2,531 kB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu hirsute/universe amd64 putty-tools amd64 0.74-1 [425 kB]
+Fetched 425 kB in 1s (790 kB/s)     
+Selecting previously unselected package putty-tools.
+(Reading database ... 269189 files and directories currently installed.)
+Preparing to unpack .../putty-tools_0.74-1_amd64.deb ...
+Unpacking putty-tools (0.74-1) ...
+Setting up putty-tools (0.74-1) ...
+Processing triggers for man-db (2.9.4-2) ...
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~$ cd Downloads/
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~/Downloads$ ssh -i VM1_key.pem azureuser@20.230.155.29
+The authenticity of host '20.230.155.29 (20.230.155.29)' can't be established.
+ECDSA key fingerprint is SHA256:cQI4PshV0skb2lASYFuFTfOiHiujW270CpUANJsOic0.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '20.230.155.29' (ECDSA) to the list of known hosts.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0664 for 'VM1_key.pem' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "VM1_key.pem": bad permissions
+azureuser@20.230.155.29: Permission denied (publickey).
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~/Downloads$ chmod 400 azureuser.pem
+chmod: cannot access 'azureuser.pem': No such file or directory
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~/Downloads$ ssh -i pvt.ppk azureuser@20.230.155.29
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0664 for 'pvt.ppk' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "pvt.ppk": bad permissions
+azureuser@20.230.155.29: Permission denied (publickey).
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~/Downloads$ chmod 400 azureuser.pem
+chmod: cannot access 'azureuser.pem': No such file or directory
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~/Downloads$ chmod 400 VM1_key.pem
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~/Downloads$ ssh -i VM1_key.pem VM1_key@20.230.155.29
+VM1_key@20.230.155.29: Permission denied (publickey).
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~/Downloads$ ssh -i pvt.ppk azureuser@20.230.155.29
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0664 for 'pvt.ppk' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "pvt.ppk": bad permissions
+azureuser@20.230.155.29: Permission denied (publickey).
+(base) lenovo@lenovo-ThinkPad-X1-Carbon-4th:~/Downloads$ ssh -i VM1_key.pem azureuser@20.230.155.29
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.13.0-1022-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Apr 21 13:10:38 UTC 2022
+
+  System load:  0.0               Processes:             128
+  Usage of /:   4.8% of 28.90GB   Users logged in:       0
+  Memory usage: 3%                IPv4 address for eth0: 10.0.0.4
+  Swap usage:   0%
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+azureuser@VM1:~$  curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+-bash: /usr/local/bin/docker-compose: Permission denied
+azureuser@VM1:~$ sudo $ curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+-bash: /usr/local/bin/docker-compose: Permission denied
+azureuser@VM1:~$ sudo curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+-bash: /usr/local/bin/docker-compose: Permission denied
+azureuser@VM1:~$ sudo apt-get update
+Hit:1 http://azure.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://azure.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 Packages [8628 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu focal/universe Translation-en [5124 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 c-n-f Metadata [265 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [144 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu focal/multiverse Translation-en [104 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu focal/multiverse amd64 c-n-f Metadata [9136 B]
+Get:11 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1745 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [14.9 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [918 kB]
+Get:14 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [205 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [20.6 kB]
+Get:16 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [24.4 kB]
+Get:17 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse Translation-en [7336 B]
+Get:18 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 c-n-f Metadata [592 B]
+Get:19 http://azure.archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [42.2 kB]
+Get:20 http://azure.archive.ubuntu.com/ubuntu focal-backports/main Translation-en [10.1 kB]
+Get:21 http://azure.archive.ubuntu.com/ubuntu focal-backports/main amd64 c-n-f Metadata [864 B]
+Get:22 http://azure.archive.ubuntu.com/ubuntu focal-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:23 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [22.7 kB]
+Get:24 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe Translation-en [15.5 kB]
+Get:25 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe amd64 c-n-f Metadata [804 B]
+Get:26 http://azure.archive.ubuntu.com/ubuntu focal-backports/multiverse amd64 c-n-f Metadata [116 B]
+Get:27 http://azure.archive.ubuntu.com/ubuntu focal-security/main amd64 Packages [1417 kB]
+Get:28 http://azure.archive.ubuntu.com/ubuntu focal-security/main Translation-en [245 kB]
+Get:29 http://azure.archive.ubuntu.com/ubuntu focal-security/main amd64 c-n-f Metadata [10.0 kB]
+Get:30 http://azure.archive.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [886 kB]
+Get:31 http://azure.archive.ubuntu.com/ubuntu focal-security/restricted Translation-en [126 kB]
+Get:32 http://azure.archive.ubuntu.com/ubuntu focal-security/universe amd64 Packages [700 kB]
+Get:33 http://azure.archive.ubuntu.com/ubuntu focal-security/universe Translation-en [124 kB]
+Get:34 http://azure.archive.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [14.4 kB]
+Get:35 http://azure.archive.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [20.7 kB]
+Get:36 http://azure.archive.ubuntu.com/ubuntu focal-security/multiverse Translation-en [5196 B]
+Get:37 http://azure.archive.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [500 B]
+Fetched 21.2 MB in 2s (8838 kB/s)                          
+Reading package lists... Done
+azureuser@VM1:~$ sudo curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+-bash: /usr/local/bin/docker-compose: Permission denied
+azureuser@VM1:~$ sudo apt-get install \
+>     ca-certificates \
+>     curl \
+>     gnupg \
+>     lsb-release
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+lsb-release is already the newest version (11.1.0ubuntu2).
+lsb-release set to manually installed.
+ca-certificates is already the newest version (20210119~20.04.2).
+ca-certificates set to manually installed.
+curl is already the newest version (7.68.0-1ubuntu2.7).
+curl set to manually installed.
+gnupg is already the newest version (2.2.19-3ubuntu2.1).
+gnupg set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+azureuser@VM1:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+azureuser@VM1:~$ echo \
+>   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+>   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+azureuser@VM1:~$ sudo apt-get update
+Hit:1 http://azure.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://azure.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://azure.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://azure.archive.ubuntu.com/ubuntu focal-security InRelease
+Get:5 https://download.docker.com/linux/ubuntu focal InRelease [57.7 kB]
+Get:6 https://download.docker.com/linux/ubuntu focal/stable amd64 Packages [15.5 kB]
+Fetched 73.1 kB in 0s (287 kB/s)      
+Reading package lists... Done
+azureuser@VM1:~$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  docker-ce-rootless-extras docker-scan-plugin pigz slirp4netns
+Suggested packages:
+  aufs-tools cgroupfs-mount | cgroup-lite
+The following NEW packages will be installed:
+  containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras docker-scan-plugin pigz slirp4netns
+0 upgraded, 7 newly installed, 0 to remove and 2 not upgraded.
+Need to get 96.4 MB of archives.
+After this operation, 405 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57.4 kB]
+Get:2 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 slirp4netns amd64 0.4.3-1 [74.3 kB]
+Get:3 https://download.docker.com/linux/ubuntu focal/stable amd64 containerd.io amd64 1.5.11-1 [22.9 MB]
+Get:4 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce-cli amd64 5:20.10.14~3-0~ubuntu-focal [41.0 MB]
+Get:5 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce amd64 5:20.10.14~3-0~ubuntu-focal [20.9 MB]
+Get:6 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce-rootless-extras amd64 5:20.10.14~3-0~ubuntu-focal [7932 kB]
+Get:7 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-scan-plugin amd64 0.17.0~ubuntu-focal [3521 kB]
+Fetched 96.4 MB in 1s (113 MB/s)             
+Selecting previously unselected package pigz.
+(Reading database ... 57953 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...
+Unpacking pigz (2.4-1) ...
+Selecting previously unselected package containerd.io.
+Preparing to unpack .../1-containerd.io_1.5.11-1_amd64.deb ...
+Unpacking containerd.io (1.5.11-1) ...
+Selecting previously unselected package docker-ce-cli.
+Preparing to unpack .../2-docker-ce-cli_5%3a20.10.14~3-0~ubuntu-focal_amd64.deb ...
+Unpacking docker-ce-cli (5:20.10.14~3-0~ubuntu-focal) ...
+Selecting previously unselected package docker-ce.
+Preparing to unpack .../3-docker-ce_5%3a20.10.14~3-0~ubuntu-focal_amd64.deb ...
+Unpacking docker-ce (5:20.10.14~3-0~ubuntu-focal) ...
+Selecting previously unselected package docker-ce-rootless-extras.
+Preparing to unpack .../4-docker-ce-rootless-extras_5%3a20.10.14~3-0~ubuntu-focal_amd64.deb ...
+Unpacking docker-ce-rootless-extras (5:20.10.14~3-0~ubuntu-focal) ...
+Selecting previously unselected package docker-scan-plugin.
+Preparing to unpack .../5-docker-scan-plugin_0.17.0~ubuntu-focal_amd64.deb ...
+Unpacking docker-scan-plugin (0.17.0~ubuntu-focal) ...
+Selecting previously unselected package slirp4netns.
+Preparing to unpack .../6-slirp4netns_0.4.3-1_amd64.deb ...
+Unpacking slirp4netns (0.4.3-1) ...
+Setting up slirp4netns (0.4.3-1) ...
+Setting up docker-scan-plugin (0.17.0~ubuntu-focal) ...
+Setting up containerd.io (1.5.11-1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+Setting up docker-ce-cli (5:20.10.14~3-0~ubuntu-focal) ...
+Setting up pigz (2.4-1) ...
+Setting up docker-ce-rootless-extras (5:20.10.14~3-0~ubuntu-focal) ...
+Setting up docker-ce (5:20.10.14~3-0~ubuntu-focal) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for systemd (245.4-4ubuntu3.16) ...
+azureuser@VM1:~$ docker
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default "/home/azureuser/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default
+                           context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/azureuser/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/azureuser/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/azureuser/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  app*        Docker App (Docker Inc., v0.9.1-beta3)
+  builder     Manage builds
+  buildx*     Docker Buildx (Docker Inc., v0.8.1-docker)
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  scan*       Docker Scan (Docker Inc., v0.17.0)
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+azureuser@VM1:~$ git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone             Clone a repository into a new directory
+   init              Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add               Add file contents to the index
+   mv                Move or rename a file, a directory, or a symlink
+   restore           Restore working tree files
+   rm                Remove files from the working tree and from the index
+   sparse-checkout   Initialize and modify the sparse-checkout
+
+examine the history and state (see also: git help revisions)
+   bisect            Use binary search to find the commit that introduced a bug
+   diff              Show changes between commits, commit and working tree, etc
+   grep              Print lines matching a pattern
+   log               Show commit logs
+   show              Show various types of objects
+   status            Show the working tree status
+
+grow, mark and tweak your common history
+   branch            List, create, or delete branches
+   commit            Record changes to the repository
+   merge             Join two or more development histories together
+   rebase            Reapply commits on top of another base tip
+   reset             Reset current HEAD to the specified state
+   switch            Switch branches
+   tag               Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch             Download objects and refs from another repository
+   pull              Fetch from and integrate with another repository or a local branch
+   push              Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+azureuser@VM1:~$ git clone https://github.com/Snigdha7906/AZURE_Project
+Cloning into 'AZURE_Project'...
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 13 (delta 2), reused 13 (delta 2), pack-reused 0
+Unpacking objects: 100% (13/13), 34.50 KiB | 2.46 MiB/s, done.
+azureuser@VM1:~$ cd AZURE_Project/
+azureuser@VM1:~/AZURE_Project$ ls
+Dockerfile  app.py  config.toml  mushrooms.csv  requirements.txt  secrets.toml
+azureuser@VM1:~/AZURE_Project$ docker build . -t "mushroom"
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=mushroom&target=&ulimits=null&version=1": dial unix /var/run/docker.sock: connect: permission denied
+azureuser@VM1:~/AZURE_Project$ sudo docker build . -t "mushroom"
+Sending build context to Docker daemon  518.1kB
+Step 1/11 : FROM python:3.7-slim
+3.7-slim: Pulling from library/python
+1fe172e4850f: Pull complete 
+caf521ccaac6: Pull complete 
+7cc994ae0e3b: Pull complete 
+b8136a3a5d3e: Pull complete 
+748e99f4119e: Pull complete 
+Digest: sha256:e720c669cd7188d6a7e36e567be6bde9feb931d66219f1e4ba2caeb30e35d2cd
+Status: Downloaded newer image for python:3.7-slim
+ ---> 595f077e16e5
+Step 2/11 : COPY . /app
+ ---> 2fc915ecba17
+Step 3/11 : WORKDIR /app
+ ---> Running in 9524169cc8e5
+Removing intermediate container 9524169cc8e5
+ ---> 93ff4ec7b7b6
+Step 4/11 : RUN pip install -r requirements.txt
+ ---> Running in 98d0d51d3557
+Collecting streamlit
+  Downloading streamlit-1.8.1-py2.py3-none-any.whl (10.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 118.9 MB/s eta 0:00:00
+Collecting pandas
+  Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 141.1 MB/s eta 0:00:00
+Collecting numpy
+  Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 132.0 MB/s eta 0:00:00
+Collecting scikit-learn
+  Downloading scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.8/24.8 MB 116.7 MB/s eta 0:00:00
+Collecting matplotlib
+  Downloading matplotlib-3.5.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 149.9 MB/s eta 0:00:00
+Collecting pydeck>=0.1.dev5
+  Downloading pydeck-0.7.1-py2.py3-none-any.whl (4.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 154.9 MB/s eta 0:00:00
+Collecting requests
+  Downloading requests-2.27.1-py2.py3-none-any.whl (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.1/63.1 KB 37.0 MB/s eta 0:00:00
+Collecting pyarrow
+  Downloading pyarrow-7.0.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (26.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.7/26.7 MB 111.1 MB/s eta 0:00:00
+Collecting python-dateutil
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 KB 98.9 MB/s eta 0:00:00
+Collecting watchdog
+  Downloading watchdog-2.1.7-py3-none-manylinux2014_x86_64.whl (76 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 76.8/76.8 KB 36.0 MB/s eta 0:00:00
+Collecting pympler>=0.9
+  Downloading Pympler-1.0.1-py3-none-any.whl (164 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 164.8/164.8 KB 67.4 MB/s eta 0:00:00
+Collecting packaging
+  Downloading packaging-21.3-py3-none-any.whl (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 KB 24.3 MB/s eta 0:00:00
+Collecting tornado>=5.0
+  Downloading tornado-6.1-cp37-cp37m-manylinux2010_x86_64.whl (428 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 428.5/428.5 KB 107.8 MB/s eta 0:00:00
+Collecting cachetools>=4.0
+  Downloading cachetools-5.0.0-py3-none-any.whl (9.1 kB)
+Collecting importlib-metadata>=1.4
+  Downloading importlib_metadata-4.11.3-py3-none-any.whl (18 kB)
+Collecting protobuf!=3.11,>=3.6.0
+  Downloading protobuf-3.20.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 142.1 MB/s eta 0:00:00
+Collecting attrs
+  Downloading attrs-21.4.0-py2.py3-none-any.whl (60 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.6/60.6 KB 30.6 MB/s eta 0:00:00
+Collecting click<8.1,>=7.0
+  Downloading click-8.0.4-py3-none-any.whl (97 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.5/97.5 KB 45.3 MB/s eta 0:00:00
+Collecting altair>=3.2.0
+  Downloading altair-4.2.0-py3-none-any.whl (812 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 812.8/812.8 KB 135.0 MB/s eta 0:00:00
+Collecting semver
+  Downloading semver-2.13.0-py2.py3-none-any.whl (12 kB)
+Collecting toml
+  Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Collecting tzlocal
+  Downloading tzlocal-4.2-py3-none-any.whl (19 kB)
+Collecting blinker
+  Downloading blinker-1.4.tar.gz (111 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.5/111.5 KB 57.5 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting typing-extensions
+  Downloading typing_extensions-4.2.0-py3-none-any.whl (24 kB)
+Collecting pillow>=6.2.0
+  Downloading Pillow-9.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 153.3 MB/s eta 0:00:00
+Collecting validators
+  Downloading validators-0.18.2-py3-none-any.whl (19 kB)
+Collecting gitpython!=3.1.19
+  Downloading GitPython-3.1.27-py3-none-any.whl (181 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.2/181.2 KB 49.0 MB/s eta 0:00:00
+Collecting pytz>=2017.3
+  Downloading pytz-2022.1-py2.py3-none-any.whl (503 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 503.5/503.5 KB 131.0 MB/s eta 0:00:00
+Collecting scipy>=1.1.0
+  Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.1/38.1 MB 96.1 MB/s eta 0:00:00
+Collecting joblib>=0.11
+  Downloading joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 307.0/307.0 KB 100.9 MB/s eta 0:00:00
+Collecting threadpoolctl>=2.0.0
+  Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+Collecting cycler>=0.10
+  Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+Collecting kiwisolver>=1.0.1
+  Downloading kiwisolver-1.4.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 137.0 MB/s eta 0:00:00
+Collecting pyparsing>=2.2.1
+  Downloading pyparsing-3.0.8-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.5/98.5 KB 49.8 MB/s eta 0:00:00
+Collecting fonttools>=4.22.0
+  Downloading fonttools-4.32.0-py3-none-any.whl (900 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 900.8/900.8 KB 78.4 MB/s eta 0:00:00
+Collecting toolz
+  Downloading toolz-0.11.2-py3-none-any.whl (55 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.8/55.8 KB 27.5 MB/s eta 0:00:00
+Collecting entrypoints
+  Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)
+Collecting jsonschema>=3.0
+  Downloading jsonschema-4.4.0-py3-none-any.whl (72 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.7/72.7 KB 41.6 MB/s eta 0:00:00
+Collecting jinja2
+  Downloading Jinja2-3.1.1-py3-none-any.whl (132 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.6/132.6 KB 45.9 MB/s eta 0:00:00
+Collecting gitdb<5,>=4.0.1
+  Downloading gitdb-4.0.9-py3-none-any.whl (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.1/63.1 KB 34.3 MB/s eta 0:00:00
+Collecting zipp>=0.5
+  Downloading zipp-3.8.0-py3-none-any.whl (5.4 kB)
+Collecting ipywidgets>=7.0.0
+  Downloading ipywidgets-7.7.0-py2.py3-none-any.whl (123 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.4/123.4 KB 59.0 MB/s eta 0:00:00
+Collecting ipykernel>=5.1.2
+  Downloading ipykernel-6.13.0-py3-none-any.whl (131 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.8/131.8 KB 62.1 MB/s eta 0:00:00
+Collecting traitlets>=4.3.2
+  Downloading traitlets-5.1.1-py3-none-any.whl (102 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.0/102.0 KB 58.8 MB/s eta 0:00:00
+Collecting six>=1.5
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting charset-normalizer~=2.0.0
+  Downloading charset_normalizer-2.0.12-py3-none-any.whl (39 kB)
+Collecting urllib3<1.27,>=1.21.1
+  Downloading urllib3-1.26.9-py2.py3-none-any.whl (138 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.0/139.0 KB 69.6 MB/s eta 0:00:00
+Collecting certifi>=2017.4.17
+  Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.2/149.2 KB 71.3 MB/s eta 0:00:00
+Collecting idna<4,>=2.5
+  Downloading idna-3.3-py3-none-any.whl (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 KB 37.2 MB/s eta 0:00:00
+Collecting pytz-deprecation-shim
+  Downloading pytz_deprecation_shim-0.1.0.post0-py2.py3-none-any.whl (15 kB)
+Collecting backports.zoneinfo
+  Downloading backports.zoneinfo-0.2.1-cp37-cp37m-manylinux1_x86_64.whl (70 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.7/70.7 KB 37.2 MB/s eta 0:00:00
+Collecting decorator>=3.4.0
+  Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)
+Collecting smmap<6,>=3.0.1
+  Downloading smmap-5.0.0-py3-none-any.whl (24 kB)
+Collecting matplotlib-inline>=0.1
+  Downloading matplotlib_inline-0.1.3-py3-none-any.whl (8.2 kB)
+Collecting psutil
+  Downloading psutil-5.9.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 280.7/280.7 KB 90.1 MB/s eta 0:00:00
+Collecting nest-asyncio
+  Downloading nest_asyncio-1.5.5-py3-none-any.whl (5.2 kB)
+Collecting ipython>=7.23.1
+  Downloading ipython-7.32.0-py3-none-any.whl (793 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 793.9/793.9 KB 147.4 MB/s eta 0:00:00
+Collecting jupyter-client>=6.1.12
+  Downloading jupyter_client-7.2.2-py3-none-any.whl (130 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.6/130.6 KB 65.2 MB/s eta 0:00:00
+Collecting debugpy>=1.0
+  Downloading debugpy-1.6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 153.6 MB/s eta 0:00:00
+Collecting widgetsnbextension~=3.6.0
+  Downloading widgetsnbextension-3.6.0-py2.py3-none-any.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 150.6 MB/s eta 0:00:00
+Collecting ipython-genutils~=0.2.0
+  Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)
+Collecting nbformat>=4.2.0
+  Downloading nbformat-5.3.0-py3-none-any.whl (73 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.2/73.2 KB 38.0 MB/s eta 0:00:00
+Collecting jupyterlab-widgets>=1.0.0
+  Downloading jupyterlab_widgets-1.1.0-py3-none-any.whl (245 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 245.1/245.1 KB 97.9 MB/s eta 0:00:00
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.1.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Collecting importlib-resources>=1.4.0
+  Downloading importlib_resources-5.7.1-py3-none-any.whl (28 kB)
+Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0
+  Downloading pyrsistent-0.18.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (117 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.1/117.1 KB 50.2 MB/s eta 0:00:00
+Collecting tzdata
+  Downloading tzdata-2022.1-py2.py3-none-any.whl (339 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 339.5/339.5 KB 110.9 MB/s eta 0:00:00
+Collecting jedi>=0.16
+  Downloading jedi-0.18.1-py2.py3-none-any.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 136.7 MB/s eta 0:00:00
+Collecting pygments
+  Downloading Pygments-2.11.2-py3-none-any.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 144.8 MB/s eta 0:00:00
+Requirement already satisfied: setuptools>=18.5 in /usr/local/lib/python3.7/site-packages (from ipython>=7.23.1->ipykernel>=5.1.2->pydeck>=0.1.dev5->streamlit->-r requirements.txt (line 1)) (57.5.0)
+Collecting pexpect>4.3
+  Downloading pexpect-4.8.0-py2.py3-none-any.whl (59 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.0/59.0 KB 35.6 MB/s eta 0:00:00
+Collecting backcall
+  Downloading backcall-0.2.0-py2.py3-none-any.whl (11 kB)
+Collecting pickleshare
+  Downloading pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
+Collecting prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0
+  Downloading prompt_toolkit-3.0.29-py3-none-any.whl (381 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 381.5/381.5 KB 109.9 MB/s eta 0:00:00
+Collecting jupyter-core>=4.9.2
+  Downloading jupyter_core-4.10.0-py3-none-any.whl (87 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 KB 35.9 MB/s eta 0:00:00
+Collecting pyzmq>=22.3
+  Downloading pyzmq-22.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 145.3 MB/s eta 0:00:00
+Collecting fastjsonschema
+  Downloading fastjsonschema-2.15.3-py3-none-any.whl (22 kB)
+Collecting notebook>=4.4.1
+  Downloading notebook-6.4.11-py3-none-any.whl (9.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 150.6 MB/s eta 0:00:00
+Collecting parso<0.9.0,>=0.8.0
+  Downloading parso-0.8.3-py2.py3-none-any.whl (100 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.8/100.8 KB 36.7 MB/s eta 0:00:00
+Collecting nbconvert>=5
+  Downloading nbconvert-6.5.0-py3-none-any.whl (561 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 561.6/561.6 KB 121.1 MB/s eta 0:00:00
+Collecting Send2Trash>=1.8.0
+  Downloading Send2Trash-1.8.0-py3-none-any.whl (18 kB)
+Collecting prometheus-client
+  Downloading prometheus_client-0.14.1-py3-none-any.whl (59 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.5/59.5 KB 34.6 MB/s eta 0:00:00
+Collecting terminado>=0.8.3
+  Downloading terminado-0.13.3-py3-none-any.whl (14 kB)
+Collecting argon2-cffi
+  Downloading argon2_cffi-21.3.0-py3-none-any.whl (14 kB)
+Collecting ptyprocess>=0.5
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Collecting wcwidth
+  Downloading wcwidth-0.2.5-py2.py3-none-any.whl (30 kB)
+Collecting pandocfilters>=1.4.1
+  Downloading pandocfilters-1.5.0-py2.py3-none-any.whl (8.7 kB)
+Collecting bleach
+  Downloading bleach-5.0.0-py3-none-any.whl (160 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.3/160.3 KB 77.4 MB/s eta 0:00:00
+Collecting nbclient>=0.5.0
+  Downloading nbclient-0.6.0-py3-none-any.whl (70 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.8/70.8 KB 40.5 MB/s eta 0:00:00
+Collecting defusedxml
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Collecting mistune<2,>=0.8.1
+  Downloading mistune-0.8.4-py2.py3-none-any.whl (16 kB)
+Collecting jupyterlab-pygments
+  Downloading jupyterlab_pygments-0.2.2-py2.py3-none-any.whl (21 kB)
+Collecting beautifulsoup4
+  Downloading beautifulsoup4-4.11.1-py3-none-any.whl (128 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.2/128.2 KB 58.9 MB/s eta 0:00:00
+Collecting tinycss2
+  Downloading tinycss2-1.1.1-py3-none-any.whl (21 kB)
+Collecting argon2-cffi-bindings
+  Downloading argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.2/86.2 KB 49.2 MB/s eta 0:00:00
+Collecting cffi>=1.0.1
+  Downloading cffi-1.15.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (427 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 427.1/427.1 KB 115.7 MB/s eta 0:00:00
+Collecting soupsieve>1.2
+  Downloading soupsieve-2.3.2.post1-py3-none-any.whl (37 kB)
+Collecting webencodings
+  Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+Collecting pycparser
+  Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.7/118.7 KB 46.4 MB/s eta 0:00:00
+Building wheels for collected packages: blinker
+  Building wheel for blinker (setup.py): started
+  Building wheel for blinker (setup.py): finished with status 'done'
+  Created wheel for blinker: filename=blinker-1.4-py3-none-any.whl size=13478 sha256=41cb7b9419c37fff515479ce0aa29e25f9d38d995b9f98b9c8c8dc55cd0219a4
+  Stored in directory: /root/.cache/pip/wheels/22/f5/18/df711b66eb25b21325c132757d4314db9ac5e8dabeaf196eab
+Successfully built blinker
+Installing collected packages: webencodings, wcwidth, Send2Trash, pytz, ptyprocess, pickleshare, mistune, ipython-genutils, fastjsonschema, certifi, blinker, backcall, zipp, watchdog, urllib3, tzdata, typing-extensions, traitlets, tornado, toolz, toml, tinycss2, threadpoolctl, soupsieve, smmap, six, semver, pyzmq, pyrsistent, pyparsing, pympler, pygments, pycparser, psutil, protobuf, prompt-toolkit, prometheus-client, pillow, pexpect, parso, pandocfilters, numpy, nest-asyncio, MarkupSafe, jupyterlab-widgets, jupyterlab-pygments, joblib, idna, fonttools, entrypoints, defusedxml, decorator, debugpy, cycler, charset-normalizer, cachetools, backports.zoneinfo, attrs, validators, terminado, scipy, requests, pytz-deprecation-shim, python-dateutil, pyarrow, packaging, matplotlib-inline, kiwisolver, jupyter-core, jinja2, jedi, importlib-resources, importlib-metadata, gitdb, cffi, bleach, beautifulsoup4, tzlocal, scikit-learn, pandas, matplotlib, jupyter-client, jsonschema, ipython, gitpython, click, argon2-cffi-bindings, nbformat, ipykernel, argon2-cffi, altair, nbclient, nbconvert, notebook, widgetsnbextension, ipywidgets, pydeck, streamlit
+Successfully installed MarkupSafe-2.1.1 Send2Trash-1.8.0 altair-4.2.0 argon2-cffi-21.3.0 argon2-cffi-bindings-21.2.0 attrs-21.4.0 backcall-0.2.0 backports.zoneinfo-0.2.1 beautifulsoup4-4.11.1 bleach-5.0.0 blinker-1.4 cachetools-5.0.0 certifi-2021.10.8 cffi-1.15.0 charset-normalizer-2.0.12 click-8.0.4 cycler-0.11.0 debugpy-1.6.0 decorator-5.1.1 defusedxml-0.7.1 entrypoints-0.4 fastjsonschema-2.15.3 fonttools-4.32.0 gitdb-4.0.9 gitpython-3.1.27 idna-3.3 importlib-metadata-4.11.3 importlib-resources-5.7.1 ipykernel-6.13.0 ipython-7.32.0 ipython-genutils-0.2.0 ipywidgets-7.7.0 jedi-0.18.1 jinja2-3.1.1 joblib-1.1.0 jsonschema-4.4.0 jupyter-client-7.2.2 jupyter-core-4.10.0 jupyterlab-pygments-0.2.2 jupyterlab-widgets-1.1.0 kiwisolver-1.4.2 matplotlib-3.5.1 matplotlib-inline-0.1.3 mistune-0.8.4 nbclient-0.6.0 nbconvert-6.5.0 nbformat-5.3.0 nest-asyncio-1.5.5 notebook-6.4.11 numpy-1.21.6 packaging-21.3 pandas-1.3.5 pandocfilters-1.5.0 parso-0.8.3 pexpect-4.8.0 pickleshare-0.7.5 pillow-9.1.0 prometheus-client-0.14.1 prompt-toolkit-3.0.29 protobuf-3.20.0 psutil-5.9.0 ptyprocess-0.7.0 pyarrow-7.0.0 pycparser-2.21 pydeck-0.7.1 pygments-2.11.2 pympler-1.0.1 pyparsing-3.0.8 pyrsistent-0.18.1 python-dateutil-2.8.2 pytz-2022.1 pytz-deprecation-shim-0.1.0.post0 pyzmq-22.3.0 requests-2.27.1 scikit-learn-1.0.2 scipy-1.7.3 semver-2.13.0 six-1.16.0 smmap-5.0.0 soupsieve-2.3.2.post1 streamlit-1.8.1 terminado-0.13.3 threadpoolctl-3.1.0 tinycss2-1.1.1 toml-0.10.2 toolz-0.11.2 tornado-6.1 traitlets-5.1.1 typing-extensions-4.2.0 tzdata-2022.1 tzlocal-4.2 urllib3-1.26.9 validators-0.18.2 watchdog-2.1.7 wcwidth-0.2.5 webencodings-0.5.1 widgetsnbextension-3.6.0 zipp-3.8.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Removing intermediate container 98d0d51d3557
+ ---> 39ec1cc6a3a5
+Step 5/11 : EXPOSE 80
+ ---> Running in 09e9f270394c
+Removing intermediate container 09e9f270394c
+ ---> d210b4138f69
+Step 6/11 : RUN mkdir ~/.streamlit
+ ---> Running in fb674da7e242
+Removing intermediate container fb674da7e242
+ ---> 23f5d22a0193
+Step 7/11 : RUN cp config.toml ~/.streamlit/config.toml
+ ---> Running in c42cb58aebe0
+Removing intermediate container c42cb58aebe0
+ ---> f6ed502bd7b0
+Step 8/11 : RUN cp secrets.toml ~/.streamlit/secrets.toml
+ ---> Running in d2cb149a9131
+Removing intermediate container d2cb149a9131
+ ---> 65fc69d63bfa
+Step 9/11 : WORKDIR /app
+ ---> Running in 88739ebc7590
+Removing intermediate container 88739ebc7590
+ ---> f7dfda2e0a3b
+Step 10/11 : ENTRYPOINT ["streamlit", "run"]
+ ---> Running in f457023b7b80
+Removing intermediate container f457023b7b80
+ ---> d603fcbfeeb0
+Step 11/11 : CMD ["app.py"]
+ ---> Running in cdc2ff845944
+Removing intermediate container cdc2ff845944
+ ---> 33f7d09b64ca
+Successfully built 33f7d09b64ca
+Successfully tagged mushroom:latest
+azureuser@VM1:~/AZURE_Project$ docker run -d -p 80:80 mushroom
+docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+azureuser@VM1:~/AZURE_Project$ sudo docker run -d -p 80:80 mushroom
+6cc8e4a2876181c7fd1ff1944007d03282bf20e4483432121d740b207a2b4d04
+azureuser@VM1:~/AZURE_Project$ Asudo docker run -d -p 80:80 mushroom
+
+
